@@ -1,0 +1,92 @@
+PRAC1 
+
+
+DFS
+
+graph = {'A': set(['B', 'C']),
+         'B': set(['A', 'D', 'E']),
+         'C': set(['A', 'F']),
+         'D': set(['B']),
+         'E': set(['B', 'F']),
+         'F': set(['C', 'E'])}
+def dfs(graph, start):
+    visited, stack = [], [start] 
+    while stack:
+        vertex = stack.pop()
+        if vertex not in visited:
+            visited.append(vertex)
+            stack.extend(graph[vertex] - set(visited)) 
+    return visited
+ 
+dfs(graph, 'A')
+
+----X--------------------X---------------------X---------------------
+
+PRAC2 BSF AND SHORTEST PATH
+
+graph = {'A': set(['B', 'C']),
+         'B': set(['A', 'D', 'E']),
+         'C': set(['A', 'F']),
+         'D': set(['B']),
+         'E': set(['B', 'F']),
+         'F': set(['C', 'E'])}
+print(graph);
+
+----------------X---------------X--------
+def bfs(graph, start):
+    visited, queue = [], [start] 
+    while queue:
+        vertex = queue.pop(0)
+        if vertex not in visited:
+            visited.append(vertex)
+            queue.extend(graph[vertex] - set(visited)) 
+    return visited
+ 
+bfs(graph, 'A'))
+output--
+
+
+def bfs_paths(graph, start, goal):
+    queue = [(start, [start])]
+    while queue:
+        (vertex, path) = queue.pop(0)
+        for next in graph[vertex] - set(path):
+            if next == goal:
+                yield path + [next]
+            else:
+                queue.append((next, path + [next]))
+ 
+list(bfs_paths(graph, 'A', 'F'))
+
+
+OUTPUT
+
+SHORTEST
+def shortest_path(graph, start, goal):
+    try:
+        return next(bfs_paths(graph, start, goal))
+    except StopIteration:
+        return None
+ 
+shortest_path(graph, 'A', 'F')
+
+OUTPUT --
+
+graph = {'A': set(['B', 'C']),
+         'B': set(['A', 'D', 'E']),
+         'C': set(['A', 'F']),
+         'D': set(['B']),
+         'E': set(['B', 'F']),
+         'F': set(['C', 'E'])}
+def bfs(graph, start):
+    visited, queue = [], [start] 
+    while queue:
+        vertex = queue.pop(0)
+        if vertex not in visited:
+            visited.append(vertex)
+            queue.extend(graph[vertex] - set(visited)) 
+    return visited
+ 
+bfs(graph, 'A'
+
+
