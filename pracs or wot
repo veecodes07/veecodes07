@@ -20,7 +20,7 @@ def dfs(graph, start):
  
 dfs(graph, 'A')
 
-----X--------------------X---------------------X---------------------
+----X--------------------X---------------------X-----------------------------------------------------------------X---------------------------X-----------------------
 
 PRAC2 BSF AND SHORTEST PATH
 
@@ -32,7 +32,8 @@ graph = {'A': set(['B', 'C']),
          'F': set(['C', 'E'])}
 print(graph);
 
-----------------X---------------X--------
+OUTPUT---
+
 def bfs(graph, start):
     visited, queue = [], [start] 
     while queue:
@@ -43,7 +44,9 @@ def bfs(graph, start):
     return visited
  
 bfs(graph, 'A'))
-output--
+
+
+OUTPUT--
 
 
 def bfs_paths(graph, start, goal):
@@ -88,5 +91,134 @@ def bfs(graph, start):
     return visited
  
 bfs(graph, 'A'
+
+OUTPUT----
+
+def bfs_paths(graph, start, goal):
+    queue = [(start, [start])]
+    while queue:
+        (vertex, path) = queue.pop(0)
+        for next in graph[vertex] - set(path):
+            if next == goal:
+                yield path + [next]
+            else:
+                queue.append((next, path + [next]))
+ 
+list(bfs_paths(graph, 'A', 'F')
+
+OUTPUT-----
+
+ShortestPath:
+
+def shortest_path(graph, start, goal):
+    try:
+        return next(bfs_paths(graph, start, goal))
+    except StopIteration:
+        return None
+ 
+shortest_path(graph, 'A', 'F')
+
+OUTPUT--------
+
+----------------------X---------------------------X----------------------------------------------------------X----------------------------X------------------------------
+PRACTICAL 3 HANOI
+
+def TowerOfHanoi(n , from_rod, to_rod, aux_rod):
+    if n == 0:
+        return
+    TowerOfHanoi(n-1, from_rod, aux_rod, to_rod)
+    print("Move disk",n,"from rod",from_rod,"to rod",to_rod)
+    TowerOfHanoi(n-1, aux_rod, to_rod, from_rod)
+n = 3
+TowerOfHanoi(n, 'A', 'C', 'B')
+
+OUTPUT--
+
+---------------------------------X--------------------------------X-------------------------------------------------X---------------------------X-----------------------
+PRACTICAL 4
+
+IMPLEMENT JUG WATER
+
+capacity = (12,8,5)
+x = capacity[0]
+y = capacity[1]
+z = capacity[2]
+memory = {}
+ans = []
+def get_all_states(state):
+  a = state[0]
+  b = state[1]
+  c = state[2]
+  if(a==6 and b==6):
+      ans.append(state)
+      return True
+  if((a,b,c) in memory):
+      return False
+  memory[(a,b,c)] = 1
+  if(a>0):
+      if(a+b<=y):
+          if( get_all_states((0,a+b,c)) ):
+              ans.append(state)
+              return True
+      else:
+          if( get_all_states((a-(y-b), y, c)) ):
+              ans.append(state)
+              return True
+      if(a+c<=z):
+          if( get_all_states((0,b,a+c)) ):
+              ans.append(state)
+              return True
+      else:
+          if( get_all_states((a-(z-c), b, z)) ):
+              ans.append(state)
+              return True
+  if(b>0):
+      #empty b into a
+      if(a+b<=x):
+          if( get_all_states((a+b, 0, c)) ):
+              ans.append(state)
+              return True
+      else:
+          if( get_all_states((x, b-(x-a), c)) ):
+              ans.append(state)
+              return True
+      if(b+c<=z):
+          if( get_all_states((a, 0, b+c)) ):
+              ans.append(state)
+              return True
+      else:
+          if( get_all_states((a, b-(z-c), z)) ):
+              ans.append(state)
+              return True
+  if(c>0):
+      #empty c into a
+      if(a+c<=x):
+          if( get_all_states((a+c, b, 0)) ):
+              ans.append(state)
+              return True
+      else:
+          if( get_all_states((x, b, c-(x-a))) ):
+              ans.append(state)
+              return True
+      if(b+c<=y):
+          if( get_all_states((a, b+c, 0)) ):
+              ans.append(state)
+              return True
+      else:
+          if( get_all_states((a, y, c-(y-b))) ):
+              ans.append(state)
+              return True
+  return False
+initial_state = (12,0,0)
+print("Starting work...\n")
+get_all_states(initial_state)
+ans.reverse()
+for i in ans:
+  print(i)
+
+
+
+OUTPUT ----------
+
 
 
