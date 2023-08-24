@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, I'm Ved S</h1>
+<h1 align="center">Hi 👋, I'm Ved </h1>
 <h3 align="center">A passionate software developer from India</h3>
 
 - 🔭 I’m currently working on **Blockchain projects**
