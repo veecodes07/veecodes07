@@ -7,7 +7,7 @@
 
 - 👨‍💻 All of my projects are available at [https://www.github.com/veecodes07](https://www.github.com/veecodes07)
 
-- 💬 Ask me about **Javascript, React and Front End Development**
+- 💬 Ask me about **Solidity, Javascript, React and Front End Development**
 
 - 📫 How to reach me **vedsurve.0706@gmail.com**
 
