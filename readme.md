@@ -3,7 +3,7 @@
 
 - 🔭 I’m currently working on **Blockchain projects**
 
-- 🌱 I’m currently learning **Rust**
+- 🌱 I’m currently learning **Rust and Move**
 
 - 👨‍💻 All of my projects are available at [https://www.github.com/veecodes07](https://www.github.com/veecodes07)
 
