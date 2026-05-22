@@ -1,9 +1,9 @@
 <h1 align="center">Hi 👋, I'm Ved </h1>
 <h3 align="center">A passionate software developer from India</h3>
 
-- 🔭 I’m currently working on **Aptos projects**
+- 🔭 I’m currently working on **AI projects**
 
-- 🌱 I’m currently learning **Rust and Move**
+- 🌱 I’m currently learning **LLMS**
 
 - 👨‍💻 All of my projects are available at [https://www.github.com/veecodes07](https://www.github.com/veecodes07)
 
