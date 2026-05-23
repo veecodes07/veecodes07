@@ -8,7 +8,7 @@ Currently obsessed with LLMs and what happens when you push them to their limits
 
 ### What I'm building
 
-- **[Foldin](https://www.npmjs.com/package/@vedsu/foldin)** — compresses LLM conversation history into ~300 tokens. 71% fewer tokens. Zero dependencies.
+- **[Foldin](https://www.npmjs.com/package/@vedsu/foldin)** — compresses LLM conversation history into ~300 tokens. 86% fewer tokens. Zero dependencies.
 
 ---
 
